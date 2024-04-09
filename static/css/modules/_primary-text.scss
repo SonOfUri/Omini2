@@ -1,0 +1,174 @@
+@import "_variables.scss";
+
+@keyframes sliding-block {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Animates the moving block animation on page refresh
+@mixin block-animation($color, $margin) {
+    width: 0%;
+    height: inherit;
+    background: $color;
+    position: absolute;
+    animation: sliding-block 1s cubic-bezier(.74, .06, .4, .92) forwards;
+    display: flex;
+    margin-top: $margin;
+}
+
+// Positions header text on page and spaces them appropriately
+@mixin header-positioning($height, $margin-top) {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $height;
+    margin-top: $margin-top;
+}
+
+// Styles the primary title and subtitle
+@mixin header-text($font-size, $mobile-font-size) {
+    font-family: 'Georgia';
+    font-size: $font-size;
+
+    z-index: -1;
+    @media (max-width: 720px) {
+        font-size: $mobile-font-size;
+    }
+}
+
+@mixin intro-fade-in($delay) {
+  -webkit-animation: fade-in 1s forwards;
+  -o-animation: fade-in 1s forwards;
+  animation: fade-in 1s forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+#chris-greening {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+    color: white;
+    .box {
+      height: 250px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .title {
+        @include header-positioning(64px, 100px);
+        .animation-block {
+          @include block-animation(#e91e63, -20px);
+        }
+        h1 {
+          @include header-text(72px, 40px);
+          // @include intro-fade-in(0.8s);
+          font-weight: 800;
+        }
+      }
+      .subtitle {
+        @include header-positioning(30px, 10px);
+        .animation-block {
+          @include block-animation(#ffb510, 0px);
+          animation-delay: 1s;
+        }
+        p {
+          @include header-text(32px, 20px);
+          // @include intro-fade-in(1.6s);
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+        }
+      }
+    }
+}
+
+.instructions {
+  @include header-text(16px, 12px);
+
+  justify-content: center;
+  align-items: center;
+  color: white;
+  display: block;
+  position: relative;
+  z-index: 10;
+  span {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}
+
+#music-credit {
+  display: none;
+  font-size: 12px;
+}
+
+#skills {
+  text-align: center;
+  margin-top: 52px;
+  z-index: -1;
+  position: relative;
+  h6 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Georgia';
+  }
+  @media (max-width: 768px) {
+    .col-md-4 + .col-md-4 {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 700px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+.btn:not(:disabled):not(.disabled) {
+  color: white;
+}
+
+.btn-primary {
+  background-color: $primaryColor !important;
+  border-color: $primaryColor !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+// .btn-primary:visited,
+.btn-primary:focus {
+  background-color: #b9184e !important;
+  border-color: #b9184e !important;
+}

@@ -1,0 +1,40 @@
+#footer {
+  background-color: transparent;
+  pointer-events: none;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 3em;
+  footer {
+    padding: 0 1em 2em;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 80em) {
+      max-width: 1280px;
+    }
+    .page-footer-copyright {
+      font-family: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
+      font-size: .8em;
+      a {
+          z-index: 10;
+          pointer-events: all;
+        }
+    }
+    .social-icons {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        a {
+          position: relative;
+          pointer-events: all;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+
+
