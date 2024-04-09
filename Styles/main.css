@@ -8265,7 +8265,7 @@ img {
   font-size: 0.75rem;
 }
 .hero-slider-wrap {
-  border: 1px solid #efefe5;
+  /* border: 1px solid #efefe5; */
   height: 85px;
   position: relative;
   overflow: visible;
@@ -8347,7 +8347,7 @@ img {
   display: flex;
 }
 .hero-slider-quote {
-  border: 1px solid #efefe5;
+  /* border: 1px solid #efefe5; */
   justify-content: center;
   align-items: center;
   width: 66px;
@@ -9855,7 +9855,7 @@ img {
   font-size: 0.875rem;
 }
 .marquee-frame {
-  background-color: #09090e;
+  /* background-color: #09090e; */
   border: 1px solid var(--uclass1);
   border-left-width: 0;
   flex-direction: column;

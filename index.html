@@ -291,7 +291,7 @@
     }
 
     .section-title-bordered--gradient.section-title-bordered:before {
-      background: linear-gradient(to right, #28efce 0%, #2ce7d2 100%);
+      background: linear-gradient(to right, #ffff00 0%, #2ce7d2 100%);
     }
 
     .section-title-bordered:after {
@@ -325,7 +325,7 @@
     }
 
     .section-title-bordered--gradient .section-title-bordered-line-1:before {
-      background: linear-gradient(to right, #2be6d1 0%, #6a59e5 100%);
+      background: linear-gradient(to right, #ffff00 0%, #ffff00 100%);
     }
 
     .section-title-bordered-line-1:after {
@@ -347,11 +347,11 @@
     }
 
     .section-title-bordered--gradient .section-title-bordered-line-2:before {
-      background: linear-gradient(to bottom, #28efce 0%, #69e79e 100%);
+      background: linear-gradient(to bottom, #ffff00 0%, #ffff00 100%);
     }
 
     .section-title-bordered--gradient .section-title-bordered-line-2:after {
-      background: linear-gradient(to bottom, #6a59e5 0%, #fb7a52 100%);
+      background: linear-gradient(to bottom, #ffff00 0%, #ffff00 100%);
     }
 
     .section-title-bordered--lg .section-title-bordered-line-2:before,
@@ -398,7 +398,7 @@
       left: -3px;
       transform: rotate(-45deg);
       transform-origin: top right;
-      background: linear-gradient(to right, #fb6e53 0%, #fb7454 100%);
+      background: linear-gradient(to right, #ffff00 0%, #ffff00 100%);
     }
 
     .btn-primary:after {
@@ -406,7 +406,7 @@
       right: -3px;
       transform: rotate(-45deg);
       transform-origin: bottom left;
-      background: linear-gradient(to right, #74e79a 0%, #74e79a 100%);
+      background: linear-gradient(to right, #ffff00 0%, #ffff00 100%);
     }
 
     .btn-primary-lines-1:before,
@@ -1376,8 +1376,30 @@
                     loading="lazy" alt="" class="corner-img" /></div>
               </div>
               <div class="hero-slider-inner">
-                <p class="paragraph-3" style="padding: 10px;">Ominicient Is a gud coin blah blah blah
-                </p>
+                <h1 class="paragraph-3 js-typewrite anim-typewrite" style="padding: 10px; font-size: 50px;">Ominicient
+                </h1>
+                <script>
+                  var i = 0;
+                  var txt = 'OMINISCIENT';
+
+                  function typeWriter() {
+                    if (i < txt.length) {
+                      document.getElementsByClassName('js-typewrite')[0].innerHTML += txt.charAt(i);
+                      i++;
+                    } else {
+                      // Reset i to 0 if it reaches the end of the txt string
+                      i = 0;
+                      document.getElementsByClassName('js-typewrite')[0].innerHTML = ''; // Clear the content
+                    }
+                  }
+
+                  // Set up an interval to call typeWriter every 65 milliseconds
+                  setInterval(typeWriter, 200);
+
+                  // Optionally, you can add an initial delay before starting the animation
+                  // setTimeout(typeWriter, 1000);
+
+                </script>
               </div>
               <div class="hero-slide-fade"></div>
               <div class="corner corner--bottom-left hero-corner"><img
@@ -1389,32 +1411,23 @@
             <div class="hero-feature"><img
                 src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
                 loading="lazy" alt="" />
-              <p class="paragraph hero-feature-paragraph">Info</p>
+              <p class="paragraph hero-feature-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                omnis natus nihil eligendi itaque sunt obcaecati, cupiditate quod necessitatibus, ut nobis voluptas
+                doloremque maxime placeat sequi qui quam ipsa ex!</p>
             </div>
-            <div class="hero-feature"><img
-                src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
-                loading="lazy" alt="" />
-              <p class="paragraph hero-feature-paragraph">Info</p>
-            </div>
-            <div class="hero-feature"><img
-                src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
-                loading="lazy" alt="" />
-              <p class="paragraph hero-feature-paragraph">Info</p>
-            </div>
-            <div class="hero-feature transparent">
-              <p class="paragraph hero-feature-paragraph">AND MUCH MORE</p>
-            </div>
+
           </div>
         </div>
       </div>
       <div class="hero-bottom">
         <div class="hero-bottom-left">
-          <div anim-trigger-hero="" class="hero-pre-title fade-component"><span anim-trigger-text="">Unleash the power
-              of</span></div>
+          <div anim-trigger-hero="" class="hero-pre-title fade-component"><span anim-trigger-text="">Welcome To</span>
+          </div>
           <div class="hero-heading">
             <div anim-trigger-hero="" class="hero-heading-top">
               <h1 anim-trigger-text-hero="" class="heading-4 fade-component">Ominiscient</h1>
-              <div class="hero-heding-top-stroke w-embed"><svg width="421" height="96" viewBox="0 0 421 96" fill="none"
+              <div class="hero-heding-top-stroke w-embed">
+                <!-- <svg width="421" height="96" viewBox="0 0 421 96" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path class="path-anim path-anim-2"
                     d="M157.5 94H402.257C403.053 94 403.816 93.6839 404.379 93.1213L419 78.5"
@@ -1435,7 +1448,7 @@
                       <stop offset="1" stop-color="#26F4D0" />
                     </linearGradient>
                   </defs>
-                </svg>
+                </svg> -->
                 <style>
                   .hero-heding-top-stroke svg {
                     width: 22.3125rem;
@@ -1482,118 +1495,7 @@
     </div>
   </div>
   <div id="unlimited-solutions" data-w-id="e74aa42a-0e27-7aab-c7b3-70c333db7b59" class="unlimited-solutions">
-    <div class="unlimited-slider-wrap">
-      <div data-delay="3000" data-animation="slide" class="unlimited-slider w-slider" data-autoplay="true"
-        data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0"
-        data-nav-spacing="0" data-duration="500" data-infinite="true">
-        <div class="mask-3 w-slider-mask">
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">01</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Smart Contracts Development</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">02</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Advanced AI Trading</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">03</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Knowledge &amp; Guidance</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">04</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Risk Management &amp; AML</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">05</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Blockchain &amp; Market Analytics</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">06</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Code Auditor</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">07</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Chart &amp; Technical Analysis</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block">
-              <div class="slide-product-nb">08</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Code Explainer</strong></div> -->
-              </div>
-            </div>
-          </div>
-          <div class="w-slide">
-            <div class="slide-product-block with-right-border">
-              <div class="slide-product-nb">09</div>
-              <div class="slide-product-text">
-                <div><strong class="fw-normal">Ominicient</strong></div>
-                <!-- <div><strong class="fw-normal">Source of News</strong></div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="left-arrow-3 w-slider-arrow-left">
-          <div class="w-icon-slider-left"></div>
-        </div>
-        <div class="right-arrow-3 w-slider-arrow-right">
-          <div class="w-icon-slider-right"></div>
-        </div>
-        <div class="slide-nav-3 w-slider-nav w-round"></div>
-      </div>
-    </div>
-    <div class="product-fade-right"></div>
-    <div class="product-fade-left"></div>
-    <div class="product-corners-frame">
-      <div class="corner corner--top-left product-corner"><img
-          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d34b8dffd28d_corner.svg"
-          loading="lazy" alt="" class="corner-img" /></div>
-      <div class="corner corner--top-right product-corner"><img
-          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d34b8dffd28d_corner.svg"
-          loading="lazy" alt="" class="corner-img corner-img--top-right" /></div>
-      <div class="corner corner--bottom-right product-corner"><img
-          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d34b8dffd28d_corner.svg"
-          loading="lazy" alt="" class="corner-img corner-img--bottom-right" /></div>
-      <div class="corner corner--bottom-left product-corner"><img
-          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d34b8dffd28d_corner.svg"
-          loading="lazy" alt="" class="corner-img corner-img--bottom-left" /></div>
-    </div>
+
     <div class="product-track-descr">
       <div class="container product-descr-container">
         <div data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca68" class="product-heading-col">
@@ -1642,7 +1544,7 @@
               }
             </style>
           </div>
-          <marquee behavior="" direction="" style="background-color: rgb(0, 0, 0, 0.9);">
+          <marquee behavior="" direction="">
             <div class="js-marquee-awards-clone">
               <div class="marquee-content align-stretch">
                 <a rel="noopener noreferrer nofollow" href="#" target="_blank" class="awards-item w-inline-block">
