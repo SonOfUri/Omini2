@@ -1138,7 +1138,7 @@
       top: 90%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 10000;
+      z-index: 100000 !important;
       color: #fff;
       font-size: 25px;
       ;
@@ -1177,6 +1177,339 @@
     });
   </script>
 
+  <div data-animation="over-right" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease"
+    data-doc-height="1" role="banner" class="aside-navbar short-mode w-nav">
+    <div class="aside-navigation-styles w-embed">
+      <style>
+        /* aside menu */
+        .aside-menu-is-opened .aside-navbar {
+          animation: showFullAside 0.75s linear forwards;
+        }
+
+        .aside-menu-is-closed .aside-navbar {
+          animation: closeFullAside 0.75s linear forwards;
+        }
+
+        @keyframes showFullAside {
+          0% {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+
+          10% {
+            opacity: 0;
+            transform: translate(0, 0);
+          }
+
+          40% {
+            opacity: 0;
+            transform: translate(200%, 0);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+        }
+
+        @keyframes closeFullAside {
+          0% {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+
+          55% {
+            opacity: 0;
+            transform: translate(200%, 0);
+          }
+
+          60% {
+            opacity: 0;
+            transform: translate(200%, 0);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+        }
+
+        .short-mode.aside-navbar {
+          pointer-events: none;
+        }
+
+        .short-mode.aside-navbar .aside-menu-btn,
+        .short-mode.aside-navbar .aside-navbar-container {
+          pointer-events: auto;
+        }
+
+        .full-mode.aside-navbar {
+          right: 12px;
+          width: 14.625rem;
+        }
+
+        .full-mode .aside-navbar-inner {
+          width: 100%;
+          background: #09090E;
+          border: 1px solid #353539;
+          justify-content: flex-end;
+        }
+
+        .full-mode.aside-navbar .aside-menu-btn {
+          display: none;
+        }
+
+        .full-mode .aside-nav-menu {
+          margin-right: 0;
+          padding: 0 16px;
+          width: 100%;
+        }
+
+        .short-mode .aside-navbar-head {
+          display: none;
+        }
+
+        /* .aside-navbar-head:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: linear-gradient(to right, #724CE8 -2.59%, #26F4D0 31.53%, #F8CF3E 62.52%, #FC6756 100%);
+          content: "";
+        } */
+
+        .aside-nav-item {
+          display: flex;
+          align-items: center;
+          position: relative;
+          white-space: nowrap;
+        }
+
+        .short-mode .aside-nav-item {
+          margin: 1px 0;
+          width: 1.375rem;
+          height: 1.3125rem;
+          justify-content: center;
+          transition: margin-bottom .3s .5s;
+        }
+
+        .short-mode .aside-nav-item.w--current {
+          margin-bottom: 1.5rem;
+        }
+
+        .short-mode .aside-nav-item:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url(https://assets-global.website-files.com/6433c1e83f44a7af5475c0f3/644946e0461883b589ffbeba_current-1.png) no-repeat 0 0 / cover;
+          content: "";
+          opacity: 0;
+          transition: opacity .3s .5s;
+        }
+
+        .short-mode .aside-nav-item.w--current:after {
+          opacity: 1;
+        }
+
+        .short-mode .aside-nav-item:before {
+          display: block;
+          width: 0.25rem;
+          height: 0.25rem;
+          border-radius: 50%;
+          background: #EFEFE5;
+          opacity: 0.25;
+          transition: opacity .2s;
+          content: "";
+        }
+
+        .short-mode .aside-nav-item:hover:before {
+          opacity: .7;
+        }
+
+        .short-mode .aside-nav-item.w--current:before {
+          opacity: 1;
+        }
+
+        .short-mode .aside-nav-link-inner {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin: 5px 0 0;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .short-mode .aside-nav-item.w--current .aside-nav-link-inner {
+          transition: opacity .3s .5s;
+          opacity: 1;
+        }
+
+        .full-mode .aside-nav-link-inner {
+          position: relative;
+          transition: padding .3s .5s;
+        }
+
+        .full-mode .aside-nav-item.w--current .aside-nav-link-inner {
+          padding: 0 0.75rem;
+        }
+
+        .full-mode .aside-nav-link-inner:after,
+        .full-mode .aside-nav-link-inner:before {
+          position: absolute;
+          width: .5rem;
+          height: .5rem;
+          content: "";
+          background: url(https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644fa7cd9bc7d5ed92d90f21_corner-top-left.svg) no-repeat 0 0 / cover;
+          opacity: 0;
+          transition: opacity .3s .5s;
+        }
+
+        .full-mode .aside-nav-link-inner:before {
+          top: 0;
+          right: 0;
+          transform: rotate(90deg);
+        }
+
+        .full-mode .aside-nav-link-inner:after {
+          bottom: 0;
+          left: 0;
+          transform: rotate(-90deg);
+        }
+
+        .full-mode .aside-nav-item.w--current .aside-nav-link-inner:after,
+        .full-mode .aside-nav-item.w--current .aside-nav-link-inner:before {
+          opacity: 1;
+        }
+
+        .full-mode .aside-nav-item {
+          width: 100%;
+          justify-content: flex-end;
+          font-size: 1.125rem;
+          margin-bottom: 1rem;
+          opacity: 0.35;
+          transition: opacity .2s;
+        }
+
+        .full-mode .aside-nav-item:hover {
+          opacity: .7;
+        }
+
+        .full-mode .aside-nav-item.w--current {
+          opacity: 1;
+        }
+
+        .full-mode .aside-nav-item:before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          width: 0.375rem;
+          height: 0.375rem;
+          background: url(https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6475c21b8be0c640d5a29c45_ico-bullet-bright.svg) no-repeat 0 0 / contain;
+          opacity: 0;
+          content: "";
+        }
+
+        .full-mode .aside-nav-item.w--current:before {
+          opacity: 1;
+          transition: opacity .2s .5s;
+        }
+
+        .w-nav-overlay {
+          background: #09090E;
+        }
+
+        .aside-navbar .w-nav-overlay {
+          position: fixed;
+          right: -12px;
+          top: -12px;
+          width: 100vw;
+          bottom: -12px;
+          z-index: -1;
+          opacity: 0;
+          display: none;
+        }
+
+        .aside-menu-is-opened .aside-navbar .w-nav-overlay {
+          display: block;
+          width: 120vw;
+          animation: overlayFadeIn 0.5s linear forwards;
+        }
+
+        @keyframes overlayFadeIn {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 0.8;
+          }
+        }
+
+        @media screen and (max-width: 991px) {
+          .short-mode .aside-nav-item.w--current {
+            margin-bottom: 0;
+          }
+
+          .short-mode .aside-nav-item .aside-nav-link-inner {
+            display: none;
+          }
+
+          .short-mode .aside-nav-item:before {
+            min-width: 5px;
+            min-height: 5px;
+          }
+        }
+
+        @media screen and (max-width: 767px) {
+          .short-mode .aside-nav-menu {
+            display: none;
+          }
+        }
+      </style>
+    </div>
+    <div class="aside-navbar-inner">
+      <div class="aside-navbar-head">
+        <div>ALL SECTIONS</div><a href="#" class="aside-menu-btn-close js-close-aside-menu w-inline-block"><img
+            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644a7458b64f4040a7ca1446_ico-close.svg"
+            loading="lazy" alt="IDO Closed Icon" class="aside-menu-ico-close"></a>
+      </div>
+      <div class="aside-navbar-container w-container">
+        <nav role="navigation" class="aside-nav-menu w-nav-menu"><a href="#intro" rel="noopener noreferrer"
+            class="aside-nav-item w-inline-block w--current">
+            <div class="aside-nav-link-inner">Intro</div>
+          </a><a href="#" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner"></div>
+          </a><a href="#Home" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner">Home</div>
+          </a><a href="#" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner"></div>
+          </a><a href="#about" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner">Utility</div>
+          </a><a href="#" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner"></div>
+          </a><a href="#our-token" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner">Tokenomics</div>
+          </a><a href="#" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner"></div>
+          </a><a href="#roadmap" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+            <div class="aside-nav-link-inner">Roadmap</div>
+          </a></nav>
+      </div><a href="#" class="aside-menu-btn js-open-aside-menu w-inline-block"><img
+          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644a7458b64f40e4ecca1445_ico-menu.svg"
+          loading="lazy" width="24" alt="menu icon" class="aside-menu-icon">
+        <div class="aside-menu-text">Menu</div><img
+          src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64d5f0cef6ef9661213bf0f1_sections-btn.svg"
+          loading="lazy" width="14" height="96" alt="Sections" class="nav-section-btn">
+      </a>
+    </div>
+    <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-2"></div>
+  </div>
+
   <div data-w-id="36bff90b-9580-48dd-69d4-53229d1950b1" style="display:flex" class="page-loader">
     <div data-w-id="324e6d87-1c7b-b71a-0115-016007bcc24e" data-is-ix2-target="1" class="loader-lottie"
       data-animation-type="lottie" data-src="./assets/loader.json" data-loop="0" data-direction="1" data-autoplay="0"
@@ -1210,7 +1543,7 @@
 
   <style>
     model-viewer {
-      /* z-index: 10; */
+      z-index: 10;
       position: fixed;
 
       top: 50%;
@@ -1281,303 +1614,6 @@
     autoplay shadow-intensity="1" shadow-intensity="1" ar skybox-height="2m" max-camera-orbit="auto 90deg auto"
     camera-controls touch-action="pan-y"
     camera-orbit="calc(90rad + env(window-scroll-y) * 15rad) calc(90deg) 5m"></model-viewer> -->
-
-  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
-    role="banner" class="navbar-4 site-header w-nav">
-    <style>
-      label {
-        width: -moz-fit-content;
-        width: fit-content;
-
-      }
-
-      .clear {
-        clear: both;
-      }
-
-
-      .slide-toggle {
-        display: none;
-      }
-
-      .slidemenu {
-        font-family: arial, sans-serif;
-        max-width: 700px;
-        margin: 10px auto;
-        overflow: hidden;
-
-        /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        padding: 10px 20px;
-      }
-
-      @media screen and (min-width: 500px) {
-        /* .slidemenu label {
-          width: 20%;
-          padding: 20px;
-        } */
-
-
-        .slider {
-          display: none !important;
-        }
-
-
-      }
-
-
-      @media screen and (max-width: 500px) {
-        model-viewer {
-          z-index: 1000;
-        }
-
-        .u-class-x {
-          display: none !important;
-        }
-      }
-
-      .slidemenu label {
-
-        text-align: center;
-        display: block;
-        float: left;
-        color: #333;
-        opacity: 0.2;
-
-
-      }
-
-      .slidemenu label:hover {
-        cursor: pointer;
-        color: #666;
-      }
-
-      .slidemenu label span {
-        display: block;
-        padding: 10px;
-      }
-
-      .slidemenu label .icon {
-        font-size: 20px;
-        border: solid 2px #333;
-        text-align: center;
-        height: 50px;
-        width: 50px;
-        display: block;
-        margin: 0 auto;
-        line-height: 50px;
-        border-radius: 50%;
-      }
-
-      /*Bar Style*/
-
-      .slider {
-        width: 100%;
-        height: 5px;
-        display: block;
-        /* background: #ccc; */
-        /* background: -webkit-linear-gradient(-45deg, #fceabb 0%, #f8b500 0%, #f8b500 17%, #fbdf93 28%, #f8b500 45%, #f8b500 60%, #fbdf93 75%, #fbdf93 75%, #f8b500 100%, #fbdf93 100%); */
-        /* background: linear-gradient(135deg, #fceabb 0%, #f2a100 0%, #f8b500 17%, #f9d16b 28%, #f8b500 37%, #f49600 52%, #f8b500 69%, #f9d67c 86%, #f8b500 100%, #efaf00 100%); */
-        margin-top: 10px;
-        border-radius: 5px;
-      }
-
-
-      .slider .bar {
-        width: 25%;
-        height: 5px;
-        background: #333;
-        border-radius: 5px;
-      }
-
-      /*Animations*/
-      .slidemenu label,
-      .slider .bar {
-        transition: all 500ms ease-in-out;
-        -webkit-transition: all 500ms ease-in-out;
-        -moz-transition: all 500ms ease-in-out;
-      }
-
-      /*Toggle*/
-
-      .slidemenu .slide-toggle:checked+label {
-        opacity: 1;
-      }
-
-
-
-      .slidemenu #slide-item-1:checked~.slider .bar {
-        margin-left: 0;
-      }
-
-      .slidemenu #slide-item-2:checked~.slider .bar {
-        margin-left: 25%;
-      }
-
-      .slidemenu #slide-item-3:checked~.slider .bar {
-        margin-left: 50%;
-      }
-
-      .slidemenu #slide-item-4:checked~.slider .bar {
-        margin-left: 75%;
-      }
-
-      .slidemenu #slide-item-5:checked~.slider .bar {
-        margin-left: 100%;
-      }
-
-
-
-      .slidemenu>* {
-        color: #fff !important;
-      }
-    </style>
-
-    <nav class="slidemenu">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-      <!-- Item 1 -->
-      <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked />
-      <label for="slide-item-1">
-        <p class="icon"><i class='bx bx-home'></i></p><span class="u-class-x">Home</span>
-      </label>
-
-      <!-- Item 2 -->
-      <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" />
-      <label for="slide-item-2">
-        <p class="icon"><i class='bx bxs-info-circle'></i></p><span class="u-class-x">About</span>
-      </label>
-
-      <!-- Item 3 -->
-      <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle" />
-      <label for="slide-item-3">
-        <p class="icon"><i class='bx bxl-codepen'></i></p><span class="u-class-x">Utility</span>
-      </label>
-
-      <!-- Item 4 -->
-      <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" />
-      <label for="slide-item-4">
-        <p class="icon"><i class='bx bxs-coin'></i></p><span class="u-class-x">Tokenomics</span>
-      </label>
-
-      <!-- Item 4 -->
-      <input type="radio" name="slideItem" id="slide-item-5" class="slide-toggle" />
-      <label for="slide-item-5">
-        <p class="icon"><i class='bx bx-sitemap'></i></p><span class="u-class-x">Roadmap</span>
-      </label>
-
-      <div class="clear"></div>
-
-      <!-- Bar -->
-      <div class="slider">
-        <div class="bar"></div>
-      </div>
-
-    </nav>
-    <!-- <div class="header-container">
-      <div class="header-side-part hsp--left"><a href="/" aria-current="page" class="brand-2 w-nav-brand w--current"
-          style="color: #fff;">
-        
-          Ominiscient
-        </a></div>
-      <div class="header-mdl-part">
-        <nav role="navigation" class="nav-menu-2 w-nav-menu">
-          <div class="menu-2">
-            <div class="header-menu-block hmb-alt">
-              <div data-hover="false" data-delay="0" class="product-menu w-dropdown">
-                <div class="product-menu-toggle w-dropdown-toggle">
-                  <div class="product-menu-icon">
-                    <div class="product-menu-icon-dot pos-top-left"></div>
-                    <div class="product-menu-icon-dot pos-top-right"></div>
-                    <div class="product-menu-icon-dot pos-bottom-left"></div>
-                    <div class="product-menu-icon-dot pos-bottom-right"></div>
-                  </div>
-                  <div class="product-menu-toggle-text">Home</div>
-                  <div class="product-menu-line"></div><img
-                    src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64491fa5649dfb767a0c35ee_arrow-down.svg"
-                    loading="lazy" alt="" class="header__icon-arrow header-icon-arrow-tablet" />
-                </div>
-
-              </div>
-              <div class="product-menu-line-tablet"></div>
-              <a href="#unlimited-solutions" scramble-link="" rel="noopener noreferrer" class="nav-link-5 w-nav-link">
-                <span scramble-text="">About</span>
-              </a>
-              <a href="#our-token" scramble-link="" rel="noopener noreferrer" class="nav-link-5 w-nav-link">
-                <span scramble-text="">Tokenomics</span>
-              </a>
-              <a href="#roadmap" scramble-link="" rel="noopener noreferrer" class="nav-link-5 w-nav-link">
-                <span scramble-text="">Roadmap</span>
-              </a>
-              <a href="" scramble-link="" rel="noopener noreferrer" class="nav-link-5 w-nav-link">
-                <span scramble-text="">Socials</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-        <div class="menu-button-3 w-nav-button">
-          <div class="icon-9 w-icon-nav-menu"></div>
-          <div class="menu-icon-wrapper">
-            <div class="menu-icon-item mii-1"></div>
-            <div class="menu-icon-item mii-2"></div>
-          </div>
-        </div>
-      </div>
-      <div class="header-side-part"><a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
-          class="btn-primary ml-auto w-inline-block">
-          <div class="btn-primary-lines btn-primary-lines-1">
-            <div class="btn-primary-lines btn-primary-lines-2">
-              <div scramble-text="" class="btn-primary-text">Buy Now</div>
-            </div>
-          </div>
-        </a></div>
-      <div class="vertical-line vertical-line--left vertical-line-header"></div>
-      <div class="vertical-line vertical-line--right vertical-line-header"></div>
-    </div> -->
-    <div class="additional-page-styles w-embed">
-      <style>
-        .product-menu-toggle.w--open .product-menu-icon {
-          transform: rotate(45deg);
-        }
-
-        .product-menu-toggle.w--open .product-menu-icon .product-menu-icon-dot {
-          transform: translate(0, 0);
-        }
-
-        @media screen and (min-width: 1280px) {
-          .product-menu-toggle:hover .product-menu-icon {
-            transform: rotate(45deg);
-          }
-
-          .product-menu-toggle:hover .product-menu-icon .product-menu-icon-dot {
-            transform: translate(0, 0);
-          }
-        }
-
-        @media screen and (min-width: 992px) {
-          .w-dropdown-list.product-menu-list.w--open {
-            left: 0;
-          }
-        }
-
-        .product-menu-link:hover .product-menu-item-bg,
-        .product-menu-link:hover .product-menu-item-arrow,
-        .product-menu-link:hover .product-menu-link-text {
-          opacity: 1;
-        }
-
-        @media screen and (max-width: 767px) {
-          .product-menu-list.w--open {
-            grid-column-gap: 2% !important;
-            grid-row-gap: 0.4375rem !important;
-          }
-        }
-      </style>
-    </div>
-  </div>
 
 
   <div class="eye-video w-embed"><video id="eye-video" crossorigin="anonymous" playsinline="" autoplay="" muted=""
@@ -1739,7 +1775,7 @@
       <div class="product-descr-shadow"></div>
     </div>
   </div>
-  <section data-w-id="fea33a19-42e0-11e0-e90d-60fbb5a96330" class="awards-section">
+  <section data-w-id="fea33a19-42e0-11e0-e90d-60fbb5a96330" class="awards-section" id="home">
     <div class="container">
       <div class="marquee-block tablet-column activate">
         <div class="marquee-heading mh-alt-mode">
@@ -1858,7 +1894,7 @@
                 src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6453d680c9932a2135e2d11b_corner-color-right-2.svg"
                 loading="lazy" width="18" height="14" alt="" class="image-1014" /></div> -->
           </div>
-          <div class="solutions-cols">
+          <div class="solutions-cols" id="about">
             <div class="solutions-col solutions-col--left">
               <div class="solutions-row-heading">
                 <h3 class="solutions-row-title">Ominiscient</h3>
