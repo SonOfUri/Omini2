@@ -9787,11 +9787,13 @@ img {
   text-decoration: none;
   display: flex;
   position: relative;
+  z-index: 100 !important;
 }
 .copy-code-block.js-copy-btn {
   border-left: 0 transparent;
   transition: opacity 0.2s;
   position: relative;
+  z-index: 100 !important;
 }
 .copy-code-block.js-copy-btn:hover {
   opacity: 0.6;
@@ -22690,6 +22692,7 @@ img {
   }
   .copy-code-wrap {
     width: 100%;
+    z-index: 1000 !important;
   }
   .media-action {
     margin-left: -2.7vw;
