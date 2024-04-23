@@ -1206,7 +1206,7 @@
     .u-c-x {
       display: flex;
       justify-content: space-around;
-      float: right;
+      /* float: right; */
       width: 150px;
 
       z-index: 1000 !important;
@@ -1216,11 +1216,30 @@
       right: 1%;
     }
 
+    .logoBox {
+      width: 200px;
+
+      position: fixed;
+      top: 6%;
+      left: 1%;
+      z-index: 1000;
+    }
+
+    .logoBox img {
+      width: 100%;
+    }
+
+
+
     .u-c-x a i {
       color: white;
       font-size: 25px;
     }
   </style>
+
+  <div class="logoBox">
+    <img src="./static/css/img/logo2.png" alt="">
+  </div>
 
   <span class="u-c-x">
     <a href="">
